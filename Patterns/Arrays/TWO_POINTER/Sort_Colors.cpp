@@ -134,7 +134,6 @@ int main() {
         if (i < nums1.size() - 1) cout << ", ";
     }
     cout << "]" << endl;
-    cout << "Expected:       [0, 0, 1, 1, 2, 2]" << endl;
     cout << endl;
     
     // Method 2: Dutch National Flag Approach
@@ -154,7 +153,6 @@ int main() {
         if (i < nums2.size() - 1) cout << ", ";
     }
     cout << "]" << endl;
-    cout << "Expected:       [0, 0, 1, 1, 2, 2]" << endl;
     
     return 0;
 }
