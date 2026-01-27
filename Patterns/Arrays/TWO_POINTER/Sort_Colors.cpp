@@ -116,9 +116,7 @@ void sortColorsDutchFlag(vector<int> &nums) {
 int main() {
     vector<int> nums1 = {2, 0, 2, 1, 1, 0};
     vector<int> nums2 = {2, 0, 2, 1, 1, 0};
-    
-    // Method 1: Two Pointer Approach
-    cout << "METHOD 1: Two Pointer Approach (Two Pass)" << endl;
+
     cout << "Original array: [";
     for (int i = 0; i < nums1.size(); i++) {
         cout << nums1[i];
@@ -126,6 +124,8 @@ int main() {
     }
     cout << "]" << endl;
     
+    // Method 1: Two Pointer Approach
+    cout << "METHOD 1: Two Pointer Approach (Two Pass)" << endl;
     sortColors(nums1);
     
     cout << "Sorted array:   [";
@@ -138,13 +138,6 @@ int main() {
     
     // Method 2: Dutch National Flag Approach
     cout << "METHOD 2: Dutch National Flag Approach (One Pass)" << endl;
-    cout << "Original array: [";
-    for (int i = 0; i < nums2.size(); i++) {
-        cout << nums2[i];
-        if (i < nums2.size() - 1) cout << ", ";
-    }
-    cout << "]" << endl;
-    
     sortColorsDutchFlag(nums2);
     
     cout << "Sorted array:   [";
