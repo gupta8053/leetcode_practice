@@ -39,18 +39,24 @@ int maxArea(vector<int> &height) {
     int maxWater = 0;
     
     while (left < right) {
-        // Calculate current area
-        int width = right - left;
-        int currentHeight = min(height[left], height[right]);
-        int currentArea = width * currentHeight;
+        // Calculate DISTANCE (width of container)
+        int width = right - left;                               // Distance between two lines
+        int currentHeight = min(height[left], height[right]);   // Calculate HEIGHT (limiting factor)
+        // Water height is limited by the shorter line (can't exceed it)
+
+        int currentArea = width * currentHeight;                // Area = width × height
         
-        // Update maximum area
+        // Update if current area is larger than max found so far
         maxWater = max(maxWater, currentArea);
         
-        // Move the pointer pointing to the shorter line
+        // GREEDY CHOICE: Move the SHORTER pointer
         if (height[left] < height[right]) {
+            // Left line is shorter, move it right
+            // Why? The right line is taller; moving it left only decreases width
+            // Moving left might find a taller line to increase area
             left++;
         } else {
+            // Right line is shorter or equal, move it left
             right--;
         }
     }
@@ -72,7 +78,6 @@ int main() {
     int result = maxArea(height);
     
     cout << "Maximum water area: " << result << endl;
-    cout << "Expected:          49" << endl;
     
     return 0;
 }
